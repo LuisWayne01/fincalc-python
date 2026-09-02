@@ -22,14 +22,6 @@ def calcular_juros_compostos(capital: float, taxa_anual: float, anos: int) -> fl
     montante = capital * ((1 + (taxa_anual / 100) ** anos))
     return montante
 
-    if __name__ == "__main__":
-        print("Iniciando o sistema FinCalc...")
-        parimmonio = calcular_aposentadoria(10000.0, 500.0, 20, 6.0)
-        print(f"Patrimônio Estimado para Aposentadoria: R$ {parimmonio:.2f}")
-        montante = calcular_juros_simples(1000.0, 5.0, 2)
-        print(f"Juros Simples: R$ {montante:.2f}")
-        montante_comp = calcular_juros_compostos(1000.0, 5.0, 2)
-        print(f"Juros Compostos: R${montante_comp:.2f}")
 
 def calcular_irrf(salario_bruto: float) -> float:
   
@@ -41,3 +33,13 @@ def calcular_irrf(salario_bruto: float) -> float:
     return (salario_bruto * 0.15) - 381.44
   else: 
     return (salario_bruto * 0.225) - 662.77
+
+  
+    if __name__ == "__main__":
+        print("Iniciando o sistema FinCalc...")
+        parimmonio = calcular_aposentadoria(10000.0, 500.0, 20, 6.0)
+        print(f"Patrimônio Estimado para Aposentadoria: R$ {parimmonio:.2f}")
+        montante = calcular_juros_simples(1000.0, 5.0, 2)
+        print(f"Juros Simples: R$ {montante:.2f}")
+        montante_comp = calcular_juros_compostos(1000.0, 5.0, 2)
+        print(f"Juros Compostos: R${montante_comp:.2f}")
