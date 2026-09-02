@@ -43,3 +43,5 @@ def calcular_irrf(salario_bruto: float) -> float:
         print(f"Juros Simples: R$ {montante:.2f}")
         montante_comp = calcular_juros_compostos(1000.0, 5.0, 2)
         print(f"Juros Compostos: R${montante_comp:.2f}")
+        irrf_calculado = calcular_irrf(3000.0)
+        print(f"IRRF Retido: R$ {irrf_calculado:.2f}")
