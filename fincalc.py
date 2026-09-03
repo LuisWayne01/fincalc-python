@@ -43,6 +43,14 @@ def calcular_parcela_price(valor_emprestimo: float,
     return parcela
 
 
+def calcular_valor_futuro(aporte_mensal: float,
+                          taxa_mensal: float, meses: int) -> float:
+    """Calcula o valor futuro acumulado com aportes mensais recorrentes."""
+    i = taxa_mensal / 100
+    vf = aporte_mensal * (((1 + i) ** meses - 1) / i)
+    return vf
+
+
 if __name__ == "__main__":
     print("Iniciando o sistema FinCalc...")
     parimmonio = calcular_aposentadoria(10000.0, 500.0, 20, 6.0)
@@ -55,3 +63,5 @@ if __name__ == "__main__":
     print(f"IRRF Retido: R$ {irrf_calculado:.2f}")
     parcela_price = calcular_parcela_price(100000.0, 1.5, 360)
     print(f"Parcela Tabela Price: R$ {parcela_price:.2f}")
+    valor_futuro = calcular_valor_futuro(500.0, 1.0, 120)
+    print(f"Valor Futuro Acumulado: R$ {valor_futuro:.2f}")
