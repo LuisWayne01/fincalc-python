@@ -58,6 +58,13 @@ def calcular_valor_futuro(aporte_mensal: float,
     return vf
 
 
+def converter_taxa_anual_para_mensal(taxa_anual: float) -> float:
+    """Converte uma taxa de juros anual equivalente para taxa mensal."""
+    taxa_decimal = taxa_anual / 100
+    taxa_mensal = ((1 + taxa_decimal) ** (1 / 12)) - 1
+    return taxa_mensal * 100
+
+
 if __name__ == "__main__":
     print("Iniciando o sistema FinCalc...")
     parimmonio = calcular_aposentadoria(10000.0, 500.0, 20, 6.0)
@@ -74,3 +81,7 @@ if __name__ == "__main__":
     print(f"Valor Futuro Acumulado: R$ {valor_futuro:.2f}")
     depreciacao = calcular_depreciacao_linear(100000.0, 20000.0, 5)
     print(f"Depreciação Anual: R$ {depreciacao:.2f}")
+    taxa_anual = 12.0
+    taxa_mensal = converter_taxa_anual_para_mensal(taxa_anual)
+    print(f"Taxa anual: {taxa_anual:.2f}%")
+    print(f"Taxa mensal equivalente: {taxa_mensal:.4f}%")
