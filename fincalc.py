@@ -64,6 +64,10 @@ def converter_taxa_anual_para_mensal(taxa_anual: float) -> float:
     taxa_mensal = ((1 + taxa_decimal) ** (1 / 12)) - 1
     return taxa_mensal * 100
 
+def calcular_margem_liquida(receita_total: float, custos_totais: float) -> float:
+    """Calcula a margem de lucro líquida percentual de uma operação."""
+    lucro = receita_total - custos_totais
+    return (lucro / receita_total) * 100
 
 if __name__ == "__main__":
     print("Iniciando o sistema FinCalc...")
@@ -85,3 +89,7 @@ if __name__ == "__main__":
     taxa_mensal = converter_taxa_anual_para_mensal(taxa_anual)
     print(f"Taxa anual: {taxa_anual:.2f}%")
     print(f"Taxa mensal equivalente: {taxa_mensal:.4f}%")
+    receita = 50000.0
+    custos = 32000.0
+    margem = calcular_margem_liquida(receita, custos)
+    print(f"Margem Líquida: {margem:.2f}%")
