@@ -35,6 +35,13 @@ def calcular_irrf(salario_bruto: float) -> float:
         return (salario_bruto * 0.225) - 662.77
 
 
+def calcular_depreciacao_linear(valor_inicial: float,
+                                valor_residual: float,
+                                vida_util_anos: int) -> float:
+    """Calcula o valor de depreciação anual de um ativo corporativo."""
+    return (valor_inicial - valor_residual) / vida_util_anos
+
+
 def calcular_parcela_price(valor_emprestimo: float,
                            taxa_mensal: float, meses: int) -> float:
     """Calcula o valor da parcela fixa em um financiamento pela Tabela Price."""
@@ -65,3 +72,5 @@ if __name__ == "__main__":
     print(f"Parcela Tabela Price: R$ {parcela_price:.2f}")
     valor_futuro = calcular_valor_futuro(500.0, 1.0, 120)
     print(f"Valor Futuro Acumulado: R$ {valor_futuro:.2f}")
+    depreciacao = calcular_depreciacao_linear(100000.0, 20000.0, 5)
+    print(f"Depreciação Anual: R$ {depreciacao:.2f}")
