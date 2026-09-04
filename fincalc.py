@@ -34,6 +34,13 @@ def calcular_irrf(salario_bruto: float) -> float:
     else:
         return (salario_bruto * 0.225) - 662.77
 
+
+def calcular_depreciacao_linear(valor_inicial: float,
+                                valor_residual: float,
+                                vida_util_anos: int) -> float:
+    """Calcula o valor de depreciação anual de um ativo corporativo."""
+    return (valor_inicial - valor_residual) / vida_util_anos
+
     if __name__ == "__main__":
         print("Iniciando o sistema FinCalc...")
         parimmonio = calcular_aposentadoria(10000.0, 500.0, 20, 6.0)
@@ -44,3 +51,5 @@ def calcular_irrf(salario_bruto: float) -> float:
         print(f"Juros Compostos: R${montante_comp:.2f}")
         irrf_calculado = calcular_irrf(3000.0)
         print(f"IRRF Retido: R$ {irrf_calculado:.2f}")
+        depreciacao = calcular_depreciacao_linear(100000.0, 20000.0, 5)
+        print(f"Depreciação Anual: R$ {depreciacao:.2f}")
