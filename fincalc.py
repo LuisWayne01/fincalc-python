@@ -41,15 +41,36 @@ def calcular_depreciacao_linear(valor_inicial: float,
     """Calcula o valor de depreciação anual de um ativo corporativo."""
     return (valor_inicial - valor_residual) / vida_util_anos
 
-    if __name__ == "__main__":
-        print("Iniciando o sistema FinCalc...")
-        parimmonio = calcular_aposentadoria(10000.0, 500.0, 20, 6.0)
-        print(f"Patrimônio Estimado para Aposentadoria: R$ {parimmonio:.2f}")
-        montante = calcular_juros_simples(1000.0, 5.0, 2)
-        print(f"Juros Simples: R$ {montante:.2f}")
-        montante_comp = calcular_juros_compostos(1000.0, 5.0, 2)
-        print(f"Juros Compostos: R${montante_comp:.2f}")
-        irrf_calculado = calcular_irrf(3000.0)
-        print(f"IRRF Retido: R$ {irrf_calculado:.2f}")
-        depreciacao = calcular_depreciacao_linear(100000.0, 20000.0, 5)
-        print(f"Depreciação Anual: R$ {depreciacao:.2f}")
+
+def calcular_parcela_price(valor_emprestimo: float,
+                           taxa_mensal: float, meses: int) -> float:
+    """Calcula o valor da parcela fixa em um financiamento pela Tabela Price."""
+    i = taxa_mensal / 100
+    parcela = valor_emprestimo * (i * ((1 + i) ** meses)) / (((1 + i) ** meses) - 1)
+    return parcela
+
+
+def calcular_valor_futuro(aporte_mensal: float,
+                          taxa_mensal: float, meses: int) -> float:
+    """Calcula o valor futuro acumulado com aportes mensais recorrentes."""
+    i = taxa_mensal / 100
+    vf = aporte_mensal * (((1 + i) ** meses - 1) / i)
+    return vf
+
+
+if __name__ == "__main__":
+    print("Iniciando o sistema FinCalc...")
+    parimmonio = calcular_aposentadoria(10000.0, 500.0, 20, 6.0)
+    print(f"Patrimônio Estimado para Aposentadoria: R$ {parimmonio:.2f}")
+    montante = calcular_juros_simples(1000.0, 5.0, 2)
+    print(f"Juros Simples: R$ {montante:.2f}")
+    montante_comp = calcular_juros_compostos(1000.0, 5.0, 2)
+    print(f"Juros Compostos: R${montante_comp:.2f}")
+    irrf_calculado = calcular_irrf(3000.0)
+    print(f"IRRF Retido: R$ {irrf_calculado:.2f}")
+    parcela_price = calcular_parcela_price(100000.0, 1.5, 360)
+    print(f"Parcela Tabela Price: R$ {parcela_price:.2f}")
+    valor_futuro = calcular_valor_futuro(500.0, 1.0, 120)
+    print(f"Valor Futuro Acumulado: R$ {valor_futuro:.2f}")
+    depreciacao = calcular_depreciacao_linear(100000.0, 20000.0, 5)
+    print(f"Depreciação Anual: R$ {depreciacao:.2f}")
