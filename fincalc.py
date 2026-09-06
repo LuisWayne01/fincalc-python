@@ -71,6 +71,13 @@ def calcular_margem_liquida(receita_total: float, custos_totais: float) -> float
     return (lucro / receita_total) * 100
 
 
+def calcular_rendimento_real(ganho_nominal: float, inflacao: float) -> float:
+    """Calcula a taxa de retorno real descontada a inflação do período."""
+    retorno_real = ((1 + (ganho_nominal / 100)) / (1 + (inflacao / 100))) - 1
+    return retorno_real * 100
+    rendimento = calcular_rendimento_real(10.5, 4.2)
+    print(f"Rendimento Real Ajustado: {rendimento:.2f}%")
+
 if __name__ == "__main__":
     print("Iniciando o sistema FinCalc...")
     parimmonio = calcular_aposentadoria(10000.0, 500.0, 20, 6.0)
