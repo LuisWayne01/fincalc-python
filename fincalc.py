@@ -75,8 +75,6 @@ def calcular_rendimento_real(ganho_nominal: float, inflacao: float) -> float:
     """Calcula a taxa de retorno real descontada a inflação do período."""
     retorno_real = ((1 + (ganho_nominal / 100)) / (1 + (inflacao / 100))) - 1
     return retorno_real * 100
-    rendimento = calcular_rendimento_real(10.5, 4.2)
-    print(f"Rendimento Real Ajustado: {rendimento:.2f}%")
 
 if __name__ == "__main__":
     print("Iniciando o sistema FinCalc...")
@@ -102,3 +100,5 @@ if __name__ == "__main__":
     custos = 32000.0
     margem = calcular_margem_liquida(receita, custos)
     print(f"Margem Líquida: {margem:.2f}%")
+    rendimento = calcular_rendimento_real(10.5, 4.2)
+    print(f"Rendimento Real Ajustado: {rendimento:.2f}%")
