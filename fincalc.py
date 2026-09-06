@@ -76,6 +76,7 @@ def calcular_rendimento_real(ganho_nominal: float, inflacao: float) -> float:
     retorno_real = ((1 + (ganho_nominal / 100)) / (1 + (inflacao / 100))) - 1
     return retorno_real * 100
 
+
 if __name__ == "__main__":
     print("Iniciando o sistema FinCalc...")
     parimmonio = calcular_aposentadoria(10000.0, 500.0, 20, 6.0)
