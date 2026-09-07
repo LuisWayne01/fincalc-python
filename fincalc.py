@@ -1,5 +1,6 @@
 # FinCalc - Sistema de Cálculos Financeiros em Python
-#anaj
+# anaj
+
 def calcular_juros_simples(capital: float, taxa_anual: float, anos: int) -> float:
     """Calcular o montante final obitido por juros simples."""
     juros = capital * (taxa_anual / 100) * anos
@@ -77,6 +78,26 @@ def calcular_rendimento_real(ganho_nominal: float, inflacao: float) -> float:
     return retorno_real * 100
 
 
+def calcular_roi_e_payback(investimento_inicial: float, ganho_estimado_anual: float) -> tuple[float, float]:
+    """
+    Calcula o ROI (em %) e o tempo de recuperação (Payback Simples em anos).
+    
+    Retorna uma tupla: (ROI percentual, Payback em anos)
+    """
+    if investimento_inicial <= 0:
+        raise ValueError("O investimento inicial deve ser maior que zero.")
+    if ganho_estimado_anual <= 0:
+        raise ValueError("O ganho estimado anual deve ser maior que zero.")
+    
+    # Cálculo do ROI anualizado simplificado
+    roi = ((ganho_estimado_anual) / investimento_inicial) * 100
+    
+    # Cálculo do Payback Simples (tempo para recuperar o investimento)
+    payback = investimento_inicial / ganho_estimado_anual
+    
+    return roi, payback
+
+
 if __name__ == "__main__":
     print("Iniciando o sistema FinCalc...")
     parimmonio = calcular_aposentadoria(10000.0, 500.0, 20, 6.0)
@@ -103,3 +124,10 @@ if __name__ == "__main__":
     print(f"Margem Líquida: {margem:.2f}%")
     rendimento = calcular_rendimento_real(10.5, 4.2)
     print(f"Rendimento Real Ajustado: {rendimento:.2f}%")
+    Teste da 9ª Função: ROI e Payback
+    investimento = 50000.00
+    retorno_anual = 12500.00
+    roi, payback = calcular_roi_e_payback(investimento, retorno_anual)
+    print(f"Investimento de R$ {investimento:.2f} com retorno de R$ {retorno_anual:.2f}/ano:")
+    print(f" -> ROI Estimado: {roi:.2f}%")
+    print(f" -> Payback Esperado: {payback:.1f} anos")
