@@ -1,4 +1,4 @@
-# FinCalc - Sistema de Cálculos Financeiros em Python
+# FinCalc - Sistema de Cálculos Financeiros em Python.
 
 def calcular_juros_simples(capital: float, taxa_anual: float, anos: int) -> float:
     """Calcular o montante final obitido por juros simples."""
@@ -81,8 +81,9 @@ def calcular_roi_e_payback(investimento_inicial: float, ganho_estimado_anual: fl
     roi = (ganho_estimado_anual / investimento_inicial) * 100
     payback = investimento_inicial / ganho_estimado_anual
     return roi, payback
-
-if __name__ == "__main__":
+    
+    
+ if __name__ == "__main__":
     print("Iniciando o sistema FinCalc...")
     parimmonio = calcular_aposentadoria(10000.0, 500.0, 20, 6.0)
     print(f"Patrimônio Estimado para Aposentadoria: R$ {parimmonio:.2f}")
