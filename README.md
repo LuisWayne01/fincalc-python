@@ -85,6 +85,8 @@ Calcula a depreciação anual de um ativo utilizando o método de depreciação 
 ```text
 Depreciação Anual = (Valor Inicial - Valor Residual) / Vida Útil
 ````
+---
+
 ### 🧮 Cálculo ROI
 
 Calcula o lucro percentual (ROI) de um projeto e em quantos anos você recupera o dinheiro investido (Payback)
