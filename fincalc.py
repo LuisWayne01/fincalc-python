@@ -77,6 +77,11 @@ def calcular_rendimento_real(ganho_nominal: float, inflacao: float) -> float:
     return retorno_real * 100
 
 
+def calcular_roi(ganho_total: float, custo_total: float) -> float:
+    """Calcula o Retorno sobre o Investimento (ROI) em percentual."""
+    return ((ganho_total - custo_total) / custo_total) * 100
+
+
 if __name__ == "__main__":
     print("Iniciando o sistema FinCalc...")
     parimmonio = calcular_aposentadoria(10000.0, 500.0, 20, 6.0)
@@ -103,3 +108,6 @@ if __name__ == "__main__":
     print(f"Margem Líquida: {margem:.2f}%")
     rendimento = calcular_rendimento_real(10.5, 4.2)
     print(f"Rendimento Real Ajustado: {rendimento:.2f}%")
+    roi_estimado = calcular_roi(1500.0, 1000.0)
+    print(f"Retorno sobre o Investimento (ROI): {roi_estimado:.2f}%")
+    
