@@ -77,11 +77,11 @@ def calcular_rendimento_real(ganho_nominal: float, inflacao: float) -> float:
     return retorno_real * 100
 
 
-def calcular_roi_e_payback(investimento_inicial: float, ganho_estimado_anual: float) -> tuple[float, float]:
+def calcular_roi(investimento_inicial: float, ganho_anual: float) -> tuple[float, float]:
     roi = (ganho_estimado_anual / investimento_inicial) * 100
     payback = investimento_inicial / ganho_estimado_anual
-    return roi, payback
-    
+    return roi, payback    
+
     
 if __name__ == "__main__":
     print("Iniciando o sistema FinCalc...")
@@ -111,4 +111,3 @@ if __name__ == "__main__":
     print(f"Rendimento Real Ajustado: {rendimento:.2f}%")
     roi, payback = calcular_roi_e_payback(50000.00, 12500.00)
     print(f"ROI: {roi:.2f}% | Payback: {payback:.1f} anos")
-
