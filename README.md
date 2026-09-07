@@ -80,6 +80,15 @@ Calcula a depreciação anual de um ativo utilizando o método de depreciação 
 - Valor residual;
 - Vida útil em anos.
 
+### 🧮 Cálculo ROI
+
+Calcula o lucro percentual (ROI) de um projeto e em quantos anos você recupera o dinheiro investido (Payback)
+
+**Parâmetros:**
+-investimento_inicial: O valor que você gasta no começo do projeto.
+-ganho_estimado_anual: O valor que você estima receber por ano.
+
+
 **Fórmula utilizada:**
 
 ```text
