@@ -83,7 +83,7 @@ def calcular_roi_e_payback(investimento_inicial: float, ganho_estimado_anual: fl
     return roi, payback
     
     
- if __name__ == "__main__":
+if __name__ == "__main__":
     print("Iniciando o sistema FinCalc...")
     parimmonio = calcular_aposentadoria(10000.0, 500.0, 20, 6.0)
     print(f"Patrimônio Estimado para Aposentadoria: R$ {parimmonio:.2f}")
@@ -111,3 +111,4 @@ def calcular_roi_e_payback(investimento_inicial: float, ganho_estimado_anual: fl
     print(f"Rendimento Real Ajustado: {rendimento:.2f}%")
     roi, payback = calcular_roi_e_payback(50000.00, 12500.00)
     print(f"ROI: {roi:.2f}% | Payback: {payback:.1f} anos")
+
