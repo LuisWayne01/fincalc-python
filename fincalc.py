@@ -1,5 +1,5 @@
 # FinCalc - Sistema de Cálculos Financeiros em Python
-
+#anaj
 def calcular_juros_simples(capital: float, taxa_anual: float, anos: int) -> float:
     """Calcular o montante final obitido por juros simples."""
     juros = capital * (taxa_anual / 100) * anos
