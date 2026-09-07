@@ -20,6 +20,7 @@ Entre os cálculos disponíveis estão:
 - Financiamento pela Tabela Price;
 - Valor futuro de investimentos;
 - Conversão de taxa anual para taxa mensal equivalente.
+- Cálculo de Retorno sobre Investimento (ROI) e Tempo de Retorno (Payback).
 
 A proposta é criar uma ferramenta que possa auxiliar na realização de cálculos financeiros básicos, além de servir como aplicação prática dos conhecimentos adquiridos durante a disciplina.
 
