@@ -85,7 +85,12 @@ def calcular_margem_liquida(receita_total: float, custos_totais: float) -> float
 
 def calcular_rendimento_real(ganho_nominal: float, inflacao: float) -> float:
     """Calcula a taxa de retorno real descontada a inflação do período."""
+
+    if inflacao <= -100:
+        raise ValueError("A inflação não pode ser menor ou igual a -100%.")
+
     retorno_real = ((1 + (ganho_nominal / 100)) / (1 + (inflacao / 100))) - 1
+
     return retorno_real * 100
 
 
