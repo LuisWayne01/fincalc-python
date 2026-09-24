@@ -32,6 +32,8 @@ def calcular_juros_compostos(capital: float, taxa_anual: float, anos: int) -> fl
 
 def calcular_irrf(salario_bruto: float) -> float:
     """Calcular o imposto de renda retido na fonte (IRRF)."""
+    if salario_bruto < 0:
+        raise ValueError("O salário bruto não pode ser negativo")
     if salario_bruto <= 2259.20:
         return 0.0
     elif salario_bruto <= 2826.65:
