@@ -72,6 +72,9 @@ def calcular_valor_futuro(aporte_mensal: float,
 
 def converter_taxa_anual_para_mensal(taxa_anual: float) -> float:
     """Converte uma taxa de juros anual equivalente para taxa mensal."""
+    if taxa_anual <= -100:
+        raise ValueError("A taxa anual deve ser maior que -100%.")
+
     taxa_decimal = taxa_anual / 100
     taxa_mensal = ((1 + taxa_decimal) ** (1 / 12)) - 1
     return taxa_mensal * 100
