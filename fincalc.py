@@ -109,6 +109,9 @@ def calcular_rendimento_real(ganho_nominal: float, inflacao: float) -> float:
 
 def calcular_roi(ganho_total: float, custo_total: float) -> float:
     """Calcula o Retorno sobre o Investimento (ROI) em percentual."""
+    if custo_total <= 0:
+        raise ValueError("O custo total deve ser maior que zero.")
+
     return ((ganho_total - custo_total) / custo_total) * 100
 
 
