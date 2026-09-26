@@ -92,6 +92,11 @@ def converter_taxa_anual_para_mensal(taxa_anual: float) -> float:
 
 def calcular_margem_liquida(receita_total: float, custos_totais: float) -> float:
     """Calcula a margem de lucro líquida percentual de uma operação."""
+    if receita_total <= 0:
+        raise ValueError("A receita total deve ser maior que zero.")
+    if custos_totais < 0:
+        raise ValueError("Os custos totais não podem ser negativos.")
+
     lucro = receita_total - custos_totais
     return (lucro / receita_total) * 100
 
