@@ -38,6 +38,12 @@ def calcular_irrf(salario_bruto: float) -> float:
 def calcular_parcela_price(valor_emprestimo: float,
                            taxa_mensal: float, meses: int) -> float:
     """Calcula o valor da parcela fixa em um financiamento pela Tabela Price."""
+    if valor_emprestimo < 0:
+        raise ValueError("O valor do emprestimo nao pode ser negativo")
+
+    if taxa_mensal == 0:
+        return valor_emprestimo / meses
+
     i = taxa_mensal / 100
     parcela = valor_emprestimo * (i * ((1 + i) ** meses)) / (((1 + i) ** meses) - 1)
     return parcela
