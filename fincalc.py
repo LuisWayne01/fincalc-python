@@ -126,7 +126,7 @@ def calcular_roi(ganho_total: float, custo_total: float) -> float:
     return ((ganho_total - custo_total) / custo_total) * 100
 
 
-if __name__ == "__main__": # pragma: no cover
+if __name__ == "__main__":  # pragma: no cover
     print("Iniciando o sistema FinCalc...")
     parimmonio = calcular_aposentadoria(10000.0, 500.0, 20, 6.0)
     print(f"Patrimônio Estimado para Aposentadoria: R$ {parimmonio:.2f}")

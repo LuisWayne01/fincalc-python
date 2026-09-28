@@ -1,4 +1,3 @@
-import pytest
 from fincalc import calcular_juros_simples
 
 
